@@ -28,7 +28,19 @@ The call would return `['foo', 'boo', 'bar']`.
 Feel free to use other data structures, but you'll have to change the test code
 accordingly.
 
-## Runtime Analysis
+# Runtime Analysis
 
 What is the worst-case big $\Theta$ complexity of your implementation? Add your
 answer, including your reasoning, to this markdown file.
+
+## My Runtime Analysis
+
+
+
+# Sources
+
+- ChatGPT: To help me understand how to access graph nodes and edge elements in the code.test.js file with examples.
+
+# Plagiarism Acknowledgement
+
+I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
