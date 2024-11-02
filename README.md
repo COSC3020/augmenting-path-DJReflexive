@@ -40,6 +40,7 @@ answer, including your reasoning, to this markdown file.
 # Sources
 
 - ChatGPT: To help me understand how to access graph nodes and edge elements in the code.test.js file with examples.
+- Google's Gemini: For quick desription of the unshift method to insert in front with javascript arrays.
 
 # Plagiarism Acknowledgement
 
