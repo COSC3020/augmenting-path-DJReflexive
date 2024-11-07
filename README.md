@@ -35,12 +35,18 @@ answer, including your reasoning, to this markdown file.
 
 ## My Runtime Analysis
 
+When my augmentingPath() algorithm runs, it first checks if the start node is already the target node. If so, it will run in constant time. 
 
+Otherwise, the recursive findPath() method is called. The same check occurs at the beginning of this method, if the current node matches the end node, this is the base case and will return the target node when found. If the target node was not yet found, the current node is added to the visited list, and reaches a for loop which iterates over the edges of the current node, which occurs $|E|$ times for the current node. In the for loop, if there is a child node that has not been visited yet, recursively call findPath() setting the child node to the current node.
+
+The worst case scenerio for this algorithm is when a valid augmented path is the last path that is check within the graph, meaning it will iterate through all nodes within the graph. This will execute $|V|$ times. 
+
+Since every node is checked, and all the edges are iterated through as well (can be thought as a nested operation), the final time complexity would be $\Theta(|V| * |E|)$.
 
 # Sources
 
 - ChatGPT: To help me understand how to access graph nodes and edge elements in the code.test.js file with examples.
-- Google's Gemini: For quick desription of the unshift method to insert in front with javascript arrays.
+- Google's Gemini: For quick desription of the cancat() method to insert in front with javascript arrays.
 
 # Plagiarism Acknowledgement
 

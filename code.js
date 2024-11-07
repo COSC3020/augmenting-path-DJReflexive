@@ -1,12 +1,11 @@
 
 function augmentingPath(graph, start, end) {
-    let result = [];
     let visited = [];
 
     // Return itself since it is both source and target
     if (start == end) { return [start]; }
 
-    result = findPath(graph, start, end, visited)
+    let result = findPath(graph, start, end, visited)
 
     if (result && result.length > 0) {
         return result.flat(Infinity);
@@ -17,7 +16,6 @@ function augmentingPath(graph, start, end) {
 
 
 function findPath(graph, current, target, visited) {
-
     // Return itself if current is the same as target
     if (current == target) { return [current]; }
 
