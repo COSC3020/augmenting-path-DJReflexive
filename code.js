@@ -1,45 +1,37 @@
 
 function augmentingPath(graph, start, end) {
     let result = [];
-
-    console.log("Source: " + start);
-    console.log("Target: " + end);
+    let visited = [];
 
     // Return itself since it is both source and target
-    if (start == end) { return result.unshift(start); }
+    if (start == end) { return [start]; }
 
-    // displayGraph(graph);
-    
-    
-    // TODO: Find augmenting path...
+    result = findPath(graph, start, end, visited)
 
-    // Traverse to next node without revisiting visited nodes
-    for (let child in graph[start]) {
-        if () { // TODO: check if node was already visited
-            result.unshift(augmentingPath(graph, child, end));
-            result.flat(Infinity); // Flatten array
-        }
+    if (result && result.length > 0) {
+        return result.flat(Infinity);
     }
 
-    result.flat(Infinity); // Flatten array
-    return result;
+    return [];
 }
 
-// Delete Later
-function displayGraph(graph) {
 
-    // How to display
-    console.log("graph: " + JSON.stringify(graph) + "\n"); // Prints the graphs elements
+function findPath(graph, current, target, visited) {
 
-    for (let currentNode in graph) { // Displays edges of all nodes
-        console.log("graph['" + currentNode + "']: " + JSON.stringify(graph[currentNode]));
+    // Return itself if current is the same as target
+    if (current == target) { return [current]; }
 
-        for (let nextNode in graph[currentNode]) { // Lists which nodes it pointing to and weights
-            console.log("\tcurrentNode: " + currentNode);
-            console.log("\tnextNode: " + nextNode);
-            console.log("\tweight of the edge currentNode->nextNode: " + graph[currentNode][nextNode]);
-            console.log("\tweight of the edge nextNode->currentNode: " + graph[nextNode][currentNode] + "\n");
+    visited.push(current);
+
+    // Traverse to next node without revisiting visited nodes
+    for (let child in graph[current]) {
+        if (!visited.includes(child)) { // Check if node was already visited
+            let path = findPath(graph, child, target, visited);
+            if (path) {
+                return [current].concat(path);
+            }
         }
     }
 
+    return null;
 }
