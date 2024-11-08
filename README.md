@@ -41,7 +41,7 @@ Otherwise, the recursive findPath() method is called. The same check occurs at t
 
 The worst case scenerio for this algorithm is when a valid augmented path is the last path that is check within the graph, meaning it will iterate through all nodes within the graph. This will execute $|V|$ times. 
 
-Since every node is checked, and all the edges are iterated through as well (can be thought as a nested operation), the final time complexity would be $\Theta(|V| * |E|)$.
+Since every node is checked, and all the edges (of valid paths) are iterated through as well, the final time complexity would be $\Theta(|V| + |E|)$.
 
 # Sources
 
